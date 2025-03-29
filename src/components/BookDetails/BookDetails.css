@@ -72,9 +72,8 @@
     transform: scale(1.1);
     background: white;
   }
-  /* Add these styles to your existing BookDetails.css file */
+ 
 
-/* Reviews Section */
 .reviews-section {
     margin-top: 3rem;
     padding: 2rem 0;
@@ -88,7 +87,7 @@
     color: #333;
   }
   
-  /* Review Form */
+  
   .review-form {
     background-color: #f9f9f9;
     padding: 1.5rem;
@@ -139,23 +138,23 @@
     background-color: #d85056;
   }
   
-  /* Login Prompt */
+  
   .login-prompt {
     text-align: center;
     padding: 1.5rem;
-    background-color: #f9f9f9;
+    background-color: black;
     border-radius: 8px;
     margin-bottom: 2rem;
   }
   
   .login-link {
-    color: #f0646a;
+    color: black !important;
     cursor: pointer;
     font-weight: 600;
     text-decoration: underline;
   }
   
-  /* Reviews List */
+  
   .reviews-list {
     margin-top: 2rem;
   }
@@ -196,7 +195,7 @@
     color: #777;
   }
   
-  /* Average Rating Display */
+  
   .average-rating {
     margin-top: 1rem;
     text-align: center;
@@ -234,7 +233,7 @@
     color: white;
   }
   
-  /* Media Queries */
+  
   @media (max-width: 768px) {
     .book-details-content {
       grid-template-columns: 1fr;

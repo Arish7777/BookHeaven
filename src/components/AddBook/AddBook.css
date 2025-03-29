@@ -41,28 +41,27 @@
     grid-column: span 2;
   }
   
-  /* Ensure ALL form labels use the green accent color */
   label {
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
-    color: rgb(160, 204, 102) !important; /* Added !important to ensure this overrides any other styles */
+    color: rgb(160, 204, 102) !important; 
   }
   
   input, textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid rgb(160, 204, 102); /* Green border as requested */
+    border: 1px solid rgb(160, 204, 102); 
     border-radius: 4px;
     font-size: 1rem;
-    background-color: rgb(92, 95, 92); /* Keeping input background white as requested */
-    color: white; /* Text color for contrast on white background */
+    background-color: rgb(92, 95, 92);
+    color: white;
     transition: border-color 0.3s;
   }
   input::placeholder,
   textarea::placeholder {
-        color: rgb(160, 204, 102); /* Black placeholder text */
-        opacity: 0.7; /* Ensure full visibility */
+        color: rgb(160, 204, 102); 
+        opacity: 0.7;
   }
   
   input:focus, textarea:focus {
@@ -161,7 +160,7 @@
   }
   
   .view-books-btn:hover {
-    background-color: #3367d6;
+    background-color: rgb(181, 219, 131);
   }
   
   @media (max-width: 768px) {

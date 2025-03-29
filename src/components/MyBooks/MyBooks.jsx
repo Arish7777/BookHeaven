@@ -9,16 +9,16 @@ const MyBooks = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Check if user is logged in
+    
     const user = JSON.parse(localStorage.getItem("currentUser"));
     if (!user) {
-      // Redirect to login page if not logged in
+      
       navigate("/auth?mode=login");
       return;
     }
     setCurrentUser(user);
 
-    // Get books added by the current user
+    
     const allBooks = JSON.parse(localStorage.getItem("userAddedBooks")) || [];
     const userBooks = allBooks.filter(
       (book) => book.added_by === user.id || book.added_by === user._id
@@ -29,11 +29,11 @@ const MyBooks = () => {
   }, [navigate]);
 
   const handleDelete = (bookId) => {
-    // Filter out the book to delete
+    
     const updatedBooks = books.filter((book) => book.id !== bookId);
     setBooks(updatedBooks);
 
-    // Update localStorage
+    
     localStorage.setItem("userAddedBooks", JSON.stringify(updatedBooks));
   };
 

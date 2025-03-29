@@ -9,12 +9,12 @@ const Favorites = () => {
   const [currentUser, setCurrentUser] = useState(null);
 
   useEffect(() => {
-    // Check if user is logged in
+    
     const user = JSON.parse(localStorage.getItem('currentUser'));
     if (user) {
       setCurrentUser(user);
       
-      // Load favorites
+      
       const userFavorites = JSON.parse(localStorage.getItem(`favorites_${user.id}`)) || [];
       setFavorites(userFavorites);
     }

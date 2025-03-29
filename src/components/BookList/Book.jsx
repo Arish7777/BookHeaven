@@ -7,16 +7,16 @@ const Book = (book) => {
 
   const handleBookClick = (e) => {
     e.preventDefault();
-    // Navigate to the book details page
+    
     navigate(`/book/${book.id}`);
     
-    // After navigation, scroll down smoothly
+    
     setTimeout(() => {
       window.scrollTo({
         top: 500,
         behavior: 'smooth'
       });
-    }, 100); // Small delay to ensure navigation completes first
+    }, 100); 
   };
 
   return (

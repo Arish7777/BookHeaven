@@ -55,7 +55,7 @@
     scrollbar-color: rgb(160, 204, 102) black;
 }
 
-/* Webkit Browsers */
+
 .booklist::-webkit-scrollbar, .book-details::-webkit-scrollbar {
     width: 8px;
 }

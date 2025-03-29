@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './AddBook.css'; // You'll need to create this CSS file
+import './AddBook.css'; 
 
 const AddBook = () => {
   const navigate = useNavigate();
@@ -22,10 +22,10 @@ const AddBook = () => {
   const [submitMessage, setSubmitMessage] = useState('');
 
   useEffect(() => {
-    // Check if user is logged in
+    
     const user = JSON.parse(localStorage.getItem('currentUser'));
     if (!user) {
-      // Redirect to login page if not logged in
+      
       navigate('/auth?mode=login');
       return;
     }
@@ -40,14 +40,14 @@ const AddBook = () => {
     if (!formData.description.trim()) tempErrors.description = "Description is required";
     if (!formData.genre.trim()) tempErrors.genre = "Genre is required";
     
-    // ISBN validation (simple check - can be enhanced)
+
     if (!formData.isbn.trim()) {
       tempErrors.isbn = "ISBN is required";
     } else if (!/^[0-9-]{10,17}$/.test(formData.isbn.trim())) {
       tempErrors.isbn = "Invalid ISBN format";
     }
     
-    // Publish year validation
+    
     if (formData.publish_year) {
       const year = parseInt(formData.publish_year);
       const currentYear = new Date().getFullYear();
@@ -56,7 +56,7 @@ const AddBook = () => {
       }
     }
     
-    // Pages validation
+    
     if (formData.pages) {
       const pages = parseInt(formData.pages);
       if (isNaN(pages) || pages <= 0) {
@@ -72,7 +72,7 @@ const AddBook = () => {
       }
     }
     
-    // Cover image URL validation (simple check)
+    
     if (formData.cover_img && !formData.cover_img.trim().startsWith('http')) {
       tempErrors.cover_img = "Please enter a valid URL for the cover image";
     }
@@ -97,19 +97,18 @@ const AddBook = () => {
     setIsSubmitting(true);
     
     try {
-      // Add the current user ID to the book data
+      
       const bookData = {
         ...formData,
         added_by: currentUser.id || currentUser._id,
         added_by_username: currentUser.username
       };
       
-      // Here you would typically make an API call to save the book
-      // For demonstration, we're just storing in localStorage
+    
       const existingBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
       const newBook = {
         ...bookData,
-        id: Date.now().toString(), // Generate a simple ID
+        id: Date.now().toString(), 
         date_added: new Date().toISOString()
       };
       
@@ -118,7 +117,7 @@ const AddBook = () => {
       
       setSubmitMessage('Book added successfully!');
       
-      // Clear form after successful submission
+      
       setFormData({
         title: '',
         author: '',
@@ -132,7 +131,7 @@ const AddBook = () => {
         price: ''
       });
       
-      // Redirect to a books list page after a short delay
+
       setTimeout(() => {
         navigate('/my-books');
       }, 2000);

@@ -28,9 +28,9 @@
     color: rgb(145, 231, 31);
 }
 
-/* Responsive Design */
 
-/* Large screens (Desktops) */
+
+
 @media (max-width: 1200px) {
     .header-title {
         font-size: 3.5rem;
@@ -40,7 +40,7 @@
     }
 }
 
-/* Medium screens (Tablets) */
+
 @media (max-width: 992px) {
     .header-title {
         font-size: 3rem;
@@ -51,7 +51,7 @@
     }
 }
 
-/* Small screens (Phones) */
+
 @media (max-width: 768px) {
     .header-title {
         font-size: 2.5rem;
@@ -64,7 +64,7 @@
     }
 }
 
-/* Extra small screens (Very small phones) */
+
 @media (max-width: 480px) {
     .header-title {
         font-size: 2rem;

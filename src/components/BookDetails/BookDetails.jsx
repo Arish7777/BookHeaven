@@ -71,23 +71,10 @@ const BookDetails = () => {
     setLoading(true);
     async function getBookDetails(){
       try{
-        const response = await fetch(`${URL}${id}.json`, {
-          method: 'GET',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          // You can add other options like cache mode if needed
-           mode: 'cors' // or 'no-cors' if needed (but this limits response access)
-        });
-        
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        
+        const response = await fetch(`${URL}${id}.json`);
         const data = await response.json();
         console.log(data);
-  
+
         if(data){
           const {description, title, covers, subject_places, subject_times, subjects} = data;
           const newBook = {
@@ -104,7 +91,7 @@ const BookDetails = () => {
           setBook(null);
         }
         setLoading(false);
-  
+
         // Scroll down after content is loaded
         setTimeout(() => {
           window.scrollTo({
@@ -307,7 +294,7 @@ const BookDetails = () => {
             </form>
           ) : (
             <div className="login-prompt">
-              <p>Please <span onClick={() => navigate("/login")} className="login-link">log in</span> to add a review</p>
+              <p>Please <span onClick={() => navigate("/auth")} className="login-link">log in</span> to add a review</p>
             </div>
           )}
           

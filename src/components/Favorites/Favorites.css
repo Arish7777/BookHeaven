@@ -79,7 +79,7 @@
     padding: 3rem;
   }
   
-  /* Heart icon styling */
+ 
   .favorite-btn {
     color: green;
     cursor: pointer;
@@ -90,13 +90,13 @@
     transform: scale(1.2);
   }
   
-  /* For heart icons that might be using font awesome or similar */
+  
   .favorite-btn i.fa-heart,
   .favorite-btn .heart-icon {
     color: green;
   }
   
-  /* For active/filled hearts */
+
   .favorite-btn.active {
     color: green;
   }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import '../AddBook/AddBook.css'; // We'll reuse the AddBook CSS
+import '../AddBook/AddBook.css'; 
 
 const EditBook = () => {
   const { id } = useParams();
@@ -25,16 +25,16 @@ const EditBook = () => {
   const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
-    // Check if user is logged in
+    
     const user = JSON.parse(localStorage.getItem('currentUser'));
     if (!user) {
-      // Redirect to login page if not logged in
+      
       navigate('/auth?mode=login');
       return;
     }
     setCurrentUser(user);
 
-    // Fetch the book to edit
+    
     const allBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
     const bookToEdit = allBooks.find(book => book.id === id);
     
@@ -44,14 +44,14 @@ const EditBook = () => {
       return;
     }
 
-    // Check if the book belongs to the current user
+    
     if (bookToEdit.added_by !== user.id && bookToEdit.added_by !== user._id) {
       setNotFound(true);
       setIsLoading(false);
       return;
     }
 
-    // Populate form with book data
+    
     setFormData({
       title: bookToEdit.title || '',
       author: bookToEdit.author || '',
@@ -76,14 +76,14 @@ const EditBook = () => {
     if (!formData.description.trim()) tempErrors.description = "Description is required";
     if (!formData.genre.trim()) tempErrors.genre = "Genre is required";
     
-    // ISBN validation (simple check - can be enhanced)
+    
     if (!formData.isbn.trim()) {
       tempErrors.isbn = "ISBN is required";
     } else if (!/^[0-9-]{10,17}$/.test(formData.isbn.trim())) {
       tempErrors.isbn = "Invalid ISBN format";
     }
     
-    // Publish year validation
+    
     if (formData.publish_year) {
       const year = parseInt(formData.publish_year);
       const currentYear = new Date().getFullYear();
@@ -92,7 +92,7 @@ const EditBook = () => {
       }
     }
     
-    // Pages validation
+    
     if (formData.pages) {
       const pages = parseInt(formData.pages);
       if (isNaN(pages) || pages <= 0) {
@@ -100,7 +100,7 @@ const EditBook = () => {
       }
     }
     
-    // Price validation
+    
     if (formData.price) {
       const price = parseFloat(formData.price);
       if (isNaN(price) || price <= 0) {
@@ -108,7 +108,7 @@ const EditBook = () => {
       }
     }
     
-    // Cover image URL validation (simple check)
+    
     if (formData.cover_img && !formData.cover_img.trim().startsWith('http')) {
       tempErrors.cover_img = "Please enter a valid URL for the cover image";
     }
@@ -133,10 +133,10 @@ const EditBook = () => {
     setIsSubmitting(true);
     
     try {
-      // Get all books from localStorage
+      
       const allBooks = JSON.parse(localStorage.getItem('userAddedBooks')) || [];
       
-      // Find the index of the book to update
+      
       const bookIndex = allBooks.findIndex(book => book.id === id);
       
       if (bookIndex === -1) {
@@ -145,22 +145,22 @@ const EditBook = () => {
         return;
       }
       
-      // Update the book data
+      
       const updatedBook = {
         ...allBooks[bookIndex],
         ...formData,
         last_updated: new Date().toISOString()
       };
       
-      // Update the book in the array
+      
       allBooks[bookIndex] = updatedBook;
       
-      // Save back to localStorage
+     
       localStorage.setItem('userAddedBooks', JSON.stringify(allBooks));
       
       setSubmitMessage('Book updated successfully!');
       
-      // Redirect to the books list page after a short delay
+      
       setTimeout(() => {
         navigate('/my-books');
       }, 2000);
