@@ -105,12 +105,20 @@
   }
   /* Base styles (already defined above) */
 
+/* Base styles remain the same */
+
 /* Media query for tablets */
 @media screen and (max-width: 768px) {
   .dashboard-container {
-    height: auto;
-    min-height: 500px;
+    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     padding: 15px;
+    background-size: cover; /* Ensure background covers entire area */
+    background-position: center;
+    position: fixed; /* Fix position to cover entire screen */
+    width: 100%;
+    margin: 0;
+    overflow-y: auto; /* Allow scrolling */
   }
   
   .dashboard-actions {
@@ -134,7 +142,16 @@
 @media screen and (max-width: 480px) {
   .dashboard-container {
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 0; /* Remove border radius for full screen */
+    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
   }
   
   .dashboard-header {
@@ -163,19 +180,19 @@
     padding: 6px;
   }
   
-  /* Optional: Make table scrollable horizontally on very small screens */
+  /* Make table scrollable horizontally on very small screens */
   .user-list-container {
     overflow-x: auto;
   }
 }
 
-/* Media query for larger screens */
-
-
 /* Media query for landscape orientation on mobile */
 @media screen and (max-width: 768px) and (orientation: landscape) {
   .dashboard-container {
-    height: auto;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+    overflow-y: auto;
   }
   
   .dashboard-actions {
