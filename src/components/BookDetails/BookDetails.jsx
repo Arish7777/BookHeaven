@@ -78,7 +78,7 @@ const BookDetails = () => {
             'Content-Type': 'application/json',
           },
           // You can add other options like cache mode if needed
-          // mode: 'cors' // or 'no-cors' if needed (but this limits response access)
+           mode: 'cors' // or 'no-cors' if needed (but this limits response access)
         });
         
         if (!response.ok) {
