@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+.user-list-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: black !important;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url("../../images/library-img.jpg") center/cover no-repeat;
+  }
+  
+  .user-table {
+    width: auto;
+    border-collapse: collapse;
+    background-color: black !important;
+  }
+  
+  .user-table th, .user-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  .user-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+  
+  .user-table tr:hover {
+    background-color: #f5f5f5;
+  }
+
+/* Media query for tablets */
+@media screen and (max-width: 768px) {
+  .user-list-container {
+    max-width: 95%;
+    padding: 15px;
+    margin: 15px auto;
+  }
+  
+  .user-table {
+    width: 100%;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 10px 8px;
+    font-size: 14px;
+  }
+}
+
+/* Media query for mobile phones */
+@media screen and (max-width: 480px) {
+  .user-list-container {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px auto;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 8px 5px;
+    font-size: 12px;
+  }
+  
+  /* Make table scrollable horizontally on small screens */
+  .user-list-container {
+    overflow-x: auto;
+  }
+  
+  .user-table {
+    min-width: 400px; /* Ensure table doesn't get too compressed */
+  }
+}
+
+/* Media query for very small screens */
+@media screen and (max-width: 320px) {
+  .user-list-container {
+    padding: 8px;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 6px 4px;
+    font-size: 11px;
+  }
+  
+  .user-table {
+    min-width: 280px;
+  }
+}
+
+/* Media query for larger screens */
+@media screen and (min-width: 1200px) {
+  .user-list-container {
+    max-width: 1000px;
+    padding: 25px;
+  }
+  
+  .user-table th, .user-table td {
+    padding: 15px;
+  }
+}

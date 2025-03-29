@@ -1,0 +1,339 @@
+/* Default Navbar Styling */
+.navbar {
+    position: fixed;  /* Fixes the navbar at the top */
+    top: 0;  /* Aligns the navbar to the top */
+    left: 0;
+    width: 100%;  /* Ensures full width */
+    z-index: 1000;  /* Keeps navbar above other elements */
+    padding: 1rem 9rem;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    background-color: black;
+    
+}
+body {
+    padding-top: 60px; /* Adjust this value based on the navbar height */
+}
+
+.navbar-brand {
+    width: 65px;
+}
+
+.text-uppercase {
+    color: rgb(160, 204, 102);
+    position: relative;
+    left: -10px; /* Adjust as needed */
+}
+
+.navbar-brand span {
+    margin-left: 1rem;
+}
+
+.brand-and-toggler {
+    width: 100%;
+}
+
+.navbar-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.navbar-toggler-btn {
+    transition: var(--transition);
+    z-index: 11;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* Ensure the icon inside the button is also white */
+.navbar-toggler-btn svg {
+    color: white; 
+}
+
+.navbar-collapse {
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    background-color: var(--black-color);
+    height: 100%;
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    padding: 10rem 3rem 0 3rem;
+    transform: translateX(100%);
+    transition: var(--transition);
+}
+
+.show-navbar-collapse {
+    transform: translateX(0);
+}
+
+.nav-item {
+  margin-top: "10px";
+}
+
+.nav-link {
+    transition: var(--transition);
+    font-size: 18px;
+}
+.nav-link.text-uppercase {
+    padding-top: "30px";
+}
+
+.nav-link:hover {
+    color: white !important;
+}
+
+body {
+    background-color: black;
+    color: rgb(160, 204, 102);
+}
+/* Existing styles remain the same, adding these to the bottom of the file */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-left: 20px;
+  }
+  
+  .auth-login-btn,
+  .auth-signup-btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 98px;
+  }
+  
+  .auth-login-btn {
+    background-color: transparent;
+    border: 2px solid rgb(160, 204, 102);
+    color: rgb(160, 204, 102);
+  }
+  
+  .auth-login-btn:hover {
+    background-color: rgba(160, 204, 102, 0.1);
+  }
+  
+  .auth-signup-btn {
+    background-color: rgb(160, 204, 102);
+    color: black;
+    border: 2px solid rgb(160, 204, 102);
+  }
+  
+  .auth-signup-btn:hover {
+    background-color: rgba(160, 204, 102, 0.9);
+  }
+  
+  .nav-username {
+    color: white;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .logout-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .logout-btn:hover {
+    background: darkred;
+  }
+  /* Style for the user info section */
+.nav-item.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between username and logout button */
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  /* Style for the username text */
+  .nav-username {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  /* Style for the logout button */
+  .logout-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+  }
+  
+  .logout-btn:hover {
+    background: darkred;
+  }
+  /* Add this to your Navbar.css file */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-item .nav-link.text-uppercase {
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  background-color: transparent;
+  border: 2px solid rgb(160, 204, 102);
+  color: rgb(160, 204, 102) !important;
+  margin: 0;
+  font-size: 16px; /* Match the font size with auth buttons */
+  cursor: pointer;
+  width: 98px;
+  text-align: center;
+}
+
+.nav-item .nav-link.text-uppercase:hover {
+  background-color: rgba(160, 204, 102, 0.1);
+}
+
+/* Fix the vertical alignment */
+.navbar-nav {
+  gap: 15px; /* Consistent spacing between all navbar items */
+}
+/* Add this to your Navbar.css file */
+
+/* Adjust the navigation buttons to properly fit text */
+.navbar-nav .nav-link,
+.navbar ul li a,
+.favorites-btn {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  display: inline-block;
+  min-width: max-content;
+}
+
+/* Specifically for the favorites button */
+.favorites-btn {
+  font-size: 1rem !important; /* Adjust if needed */
+  letter-spacing: 0.5px !important; /* Reduce letter spacing if needed */
+}
+
+/* If you're using box-sizing: border-box, make sure padding is accounted for */
+.navbar .container a,
+.navbar .container button {
+  box-sizing: border-box;
+}
+
+/* Ensure the nav items have enough space */
+.navbar-nav li {
+  margin: 0 0.25rem;
+}
+
+/* Adjustments for mobile */
+  @media screen and (max-width: 800px) {
+    .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    
+    .nav-item .nav-link.text-uppercase {
+      width: 100%;
+    }
+  }
+    
+  /* Responsive adjustments */
+  @media screen and (max-width: 992px) {
+    .auth-buttons {
+      flex-direction: column;
+      width: 100%;
+      margin-left: 0;
+      gap: 10px;
+    }
+    
+    .auth-login-btn,
+    .auth-signup-btn {
+      width: 100%;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+
+/* Media Queries for Responsiveness */
+
+@media screen and (min-width: 800px) {
+    .navbar-collapse {
+        display: flex !important;
+        position: static;
+        width: auto;
+        background: none;
+        padding: 0;
+        transform: none;
+        align-items: center;
+    }
+
+    .navbar-nav {
+        display: flex;
+        gap: 2rem; /* Adds spacing between Home and About */
+        list-style: none;
+    }
+
+    .navbar-nav .nav-item {
+        margin-bottom: 0; /* Remove spacing since it's meant for mobile */
+    }
+
+    .navbar-toggler-btn {
+        display: none; /* Hides the menu button on desktop */
+        margin-right: 4rem;
+    }
+}
+
+
+
+/* Mobile Devices (Max-width: 768px) */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 1rem 2rem;
+    }
+
+    .navbar-brand span {
+        font-size: 20px;
+    }
+
+    .navbar-toggler-btn {
+        display: block;
+    }
+
+    .navbar-collapse {
+        width: 50%;
+        padding-top: 6rem;
+    }
+
+    .nav-link {
+        font-size: 20px;
+    }
+}
+
+/* Smaller Mobile Screens (Max-width: 480px) */
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 1rem;
+    }
+
+    .navbar-brand span {
+        font-size: 18px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+}

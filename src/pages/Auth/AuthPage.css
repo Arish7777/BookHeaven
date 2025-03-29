@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+   url("../../images/library-img.jpg") center/cover no-repeat;
+}
+
+.auth-wrapper {
+  background-color: rgb(160, 204, 102);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  text-align: center;
+}
+
+.auth-header {
+  margin-bottom: 30px;
+}
+
+.auth-header h1 {
+  color: black;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.auth-header p {
+  color: black;
+  font-size: 1rem;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group1 {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group1 label {
+  display: block;
+  margin-bottom: 8px;
+  color: black !important;
+  font-weight: 600;
+}
+
+.form-group1 input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background-color: white !important;
+  color: #000;
+}
+.form-group1 input::placeholder{
+  color: #000;
+} 
+
+.form-group1 input:focus {
+  outline: none;
+  border-color: black;
+  box-shadow: 0 0 0 2px black;
+}
+
+.auth-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: grey;
+}
+
+.auth-toggle {
+  margin-top: 20px;
+  color: black;
+}
+
+.auth-toggle span {
+  color: black;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.auth-toggle span:hover {
+  text-decoration: underline;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.back-button svg {
+  margin-right: 8px;
+}

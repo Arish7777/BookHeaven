@@ -1,0 +1,228 @@
+.my-books-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+  
+  .my-books-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+  }
+  
+  .my-books-header h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+    color:  rgb(128, 182, 58);
+  }
+  
+  .my-books-header p {
+    color:  rgb(128, 182, 58);
+    font-size: 1.125rem;
+    margin-bottom: 1rem;
+  }
+  
+  .add-new-book-btn {
+    padding: 0.75rem 1.5rem;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-new-book-btn:hover {
+    background-color: rgb(73, 204, 73);
+  }
+  
+  .no-books-message {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .no-books-message p {
+    font-size: 1.25rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  .add-first-book-btn {
+    padding: 1rem 2rem;
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.125rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .add-first-book-btn:hover {
+    background-color: #3367d6;
+  }
+  
+  .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .book-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 8px solid rgb(128, 182, 58);
+  }
+  
+  .book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .book-cover {
+    height: 200px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .book-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .no-cover {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+  }
+  
+  .no-cover span {
+    font-size: 4rem;
+    color: #9e9e9e;
+  }
+  
+  .book-info {
+    padding: 1.5rem;
+    background-color: rgb(160, 204, 102);
+    color:  black !important;
+  }
+  
+  .book-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .book-author {
+    color: black;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  
+  .book-genre {
+    color: black;
+    font-size: 0.875rem;
+    background-color: #f5f5f5;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    margin-bottom: 0.75rem;
+  }
+  
+  .book-added {
+    font-size: 0.875rem;
+    color: black;
+    margin-bottom: 1rem;
+  }
+  
+  .book-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .view-details-btn, .edit-book-btn,.delete-book-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .view-details-btn {
+    background-color: #443b3b;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .view-details-btn:hover {
+    background-color: #706b6b;
+  }
+  
+  .edit-book-btn {
+    background-color: green;
+    color: white;
+    border: none;
+  }
+  .delete-book-btn{
+    background-color: red;
+    color: white;
+    border: none;
+  }
+  .edit-book-btn:hover {
+    background-color: rgb(64, 175, 64);
+  }
+  .delete-book-btn:hover{
+    background-color: rgb(197, 63, 63);
+  }
+  
+  .my-books-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+  
+  .spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #4285f4;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @media (max-width: 768px) {
+    .books-grid {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .my-books-header h2 {
+      font-size: 2rem;
+    }
+  }

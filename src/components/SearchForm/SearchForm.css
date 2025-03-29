@@ -1,0 +1,88 @@
+.search-form {
+    width: 100%;
+    max-width: 600px;
+    height: 50%;
+    margin: 0 auto;
+}
+
+/* Search Bar Styling */
+.search-form-elem {
+    padding: 1.4rem 2.8rem;
+    border-radius: 3.8rem;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: black;
+    color: white;
+}
+
+.search-form-elem .form-control {
+    font-size: 2rem;
+    padding: 0.6rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: white;
+}
+
+.search-form-elem .form-control::placeholder {
+    opacity: 0.9;
+}
+.flex.flex-c{
+    color: white; 
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .search-form {
+        max-width: 500px;
+    }
+    .search-form-elem {
+        padding: 1.2rem 2rem;
+        height: 50px;
+    }
+    .search-form-elem .form-control {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .search-form {
+        max-width: 400px;
+    }
+    .search-form-elem {
+        padding: 1rem 1.8rem;
+        height: 45px;
+    }
+    .search-form-elem .form-control {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .search-form {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    .search-form-elem {
+        padding: 0.8rem 1.4rem;
+        height: 40px;
+        border-radius: 3rem;
+    }
+    .search-form-elem .form-control {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .search-form-elem {
+        padding: 0.6rem 1.2rem;
+        height: 35px;
+        border-radius: 2.5rem;
+    }
+    .search-form-elem .form-control {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,108 @@
+.booklist, .book-details{
+    padding: 3rem 0;
+    background-color: black;
+}
+.booklist-content{
+    gap: 3rem;
+}
+.book-item{
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+    transition: var(--transition);
+    background-color: rgb(156, 173, 61); /* Change background to black */
+}
+.book-item-info {
+    color: white; /* Ensures all text inside remains white */
+}
+.book-item-info-item.author,
+.book-item-info-item span {
+    color: black !important; /* Force text to black */
+}
+.book-item:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.book-item-img img{
+    max-width: 180px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.book-item-info{
+    margin-top: 2rem;
+}
+.book-item-info-item.title{
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+}
+.book-item-info-item.author{
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+.book-item-info-item:not(.book-item-info-item.title) span:last-child{
+    opacity: 0.8;
+}
+.book-item-info-item.publish-year{
+    opacity: 0.6;
+    font-style: italic;
+    font-size: 14px;
+}
+.back-btn{
+    color:  rgb(160, 204, 102);;
+}
+.booklist, .book-details {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(160, 204, 102) black;
+}
+
+/* Webkit Browsers */
+.booklist::-webkit-scrollbar, .book-details::-webkit-scrollbar {
+    width: 8px;
+}
+
+.booklist::-webkit-scrollbar-track, .book-details::-webkit-scrollbar-track {
+    background: black;
+}
+
+.booklist::-webkit-scrollbar-thumb, .book-details::-webkit-scrollbar-thumb {
+    background: rgb(160, 204, 102);
+    border-radius: 10px;
+}
+
+.booklist::-webkit-scrollbar-thumb:hover, .book-details::-webkit-scrollbar-thumb:hover {
+    background: limegreen;
+}
+.book-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.book-card-link:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media screen and (min-width: 600px){
+    .booklist-content{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px){
+    .booklist-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .book-item-img img{
+        max-width: 150px;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .booklist-content{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .book-item-img img{
+        max-width: 120px;
+    }
+}
